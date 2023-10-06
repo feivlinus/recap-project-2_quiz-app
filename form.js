@@ -1,3 +1,4 @@
+//Task 3
 const newCardForm = document.querySelector('[data-js="newCardForm"]');
 
 //Event listener für das Formular
@@ -8,7 +9,7 @@ newCardForm.addEventListener("submit", (event) => {
   document.querySelector("main").append(createCard(data));
 });
 
-// Fragen - Kärtchen - Erstellfunktion;
+//Fragen - Kärtchen - Erstellfunktion;
 function createCard(data) {
   //Card List creation
   const cardList = document.createElement("ul");
@@ -62,6 +63,7 @@ function createCard(data) {
   return cardList;
 }
 
+// Task 4
 const questionInput = document.querySelector('[data-js="questionInput"]');
 const answerInput = document.querySelector('[data-js="answerInput"]');
 
