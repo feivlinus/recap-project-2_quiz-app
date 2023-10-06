@@ -16,12 +16,16 @@
       <form class="card-list" data-js="newCardForm">
         <fieldset>
           <label for="question">Your Question:</label>
-          <textarea name="question" id="question"></textarea>
+          <textarea name="question" id="question" maxlength="150"></textarea>
+          <p>
+            <span data-js="charsLeftQuestionInput">150</span> characters left
+          </p>
         </fieldset>
 
         <fieldset>
           <label for="answer">Your Answer:</label>
-          <textarea name="answer" id="answer"></textarea>
+          <textarea name="answer" id="answer" maxlength="150"></textarea>
+          <p><span data-js="charsLeftAnswerInput">150</span> characters left</p>
         </fieldset>
 
         <fieldset>
