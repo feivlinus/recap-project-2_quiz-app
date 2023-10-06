@@ -5,7 +5,6 @@ newCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData);
-  console.log(data);
   document.querySelector("main").append(createCard(data));
 });
 
@@ -62,3 +61,22 @@ function createCard(data) {
 
   return cardList;
 }
+
+const questionInput = document.querySelector('[data-js="questionInput"]');
+const answerInput = document.querySelector('[data-js="answerInput"]');
+
+function addEvenListeners(elementInput, charsLefDisplayElement) {
+  elementInput.addEventListener("keyup", (event) => {
+    const charCount = event.target.value.length;
+    if (charCount <= 150) {
+      const charsLeftDisplay = document.querySelector(
+        `[data-js="${charsLefDisplayElement}"]`
+      );
+
+      charsLeftDisplay.textContent = -1 * (charCount - 150);
+    }
+  });
+}
+
+addEvenListeners(questionInput, "charsLeftQuestionInput");
+addEvenListeners(answerInput, "charsLeftAnswerInput");
